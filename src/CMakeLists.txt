@@ -3,14 +3,16 @@ add_executable(spiral-flap
     gameloop.cpp
 )
 
-target_include_directories(CalculatorApp PRIVATE
+target_include_directories(spiral-flap PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
-target_link_libraries(CalculatorApp PRIVATE
+target_link_libraries(spiral-flap PRIVATE
+    rlimgui
+    imgui
     raylib
 )
 
-set_target_properties(CalculatorApp PROPERTIES
+set_target_properties(spiral-flap PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin
 )

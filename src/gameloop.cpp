@@ -3,7 +3,7 @@
 
 void GameLoop::Draw() {
 	BeginDrawing();
-	ClearBackground(WHITE);
+	ClearBackground({255, 3, 62});
 	EndDrawing();
 }
 

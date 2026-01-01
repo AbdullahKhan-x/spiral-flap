@@ -1,11 +1,19 @@
-# Add raylib
-add_subdirectory(vendor/raylib)
+# Imgui subdirectory (has its own CMakeLists.txt)
+add_subdirectory(vendor/imgui)
 
-# Build rlimgui (header only? library?)
-add_library(rlimgui INTERFACE)
-target_include_directories(rlimgui INTERFACE vendor/rlimgui)
+# rlImGui subdirectory (has its own CMakeLists.txt)
+add_subdirectory(vendor/rlimgui)
 
-# Build imgui (Assuming it has cpp sources)
-file(GLOB IMGUI_SOURCES vendor/imgui/*.cpp)
-add_library(imgui ${IMGUI_SOURCES})
-target_include_directories(imgui PUBLIC vendor/imgui)
+# Raylib (pre-built)
+add_library(raylib STATIC IMPORTED)
+if(WIN32)
+    set_target_properties(raylib PROPERTIES
+        IMPORTED_LOCATION "${CMAKE_CURRENT_SOURCE_DIR}/vendor/raylib/lib/libraylib.a"
+        INTERFACE_INCLUDE_DIRECTORIES "${CMAKE_CURRENT_SOURCE_DIR}/vendor/raylib/include"
+    )
+elseif(UNIX)
+    set_target_properties(raylib PROPERTIES
+        IMPORTED_LOCATION "${CMAKE_CURRENT_SOURCE_DIR}/vendor/raylib/lib/libraylib.a"
+        INTERFACE_INCLUDE_DIRECTORIES "${CMAKE_CURRENT_SOURCE_DIR}/vendor/raylib/include"
+    )
+endif()
