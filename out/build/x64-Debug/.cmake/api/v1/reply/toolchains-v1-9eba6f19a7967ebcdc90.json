@@ -5,6 +5,14 @@
 		{
 			"compiler" : 
 			{
+				"implicit" : {},
+				"path" : "D:/Visual Studio/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/cl.exe"
+			},
+			"language" : "C"
+		},
+		{
+			"compiler" : 
+			{
 				"id" : "MSVC",
 				"implicit" : 
 				{

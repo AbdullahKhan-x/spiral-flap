@@ -96,6 +96,34 @@ build core\rebuild_cache: phony core\CMakeFiles\rebuild_cache.util
 # C:/Users/Rao/source/repos/spiral-flap/core/CMakeLists.txt
 # =============================================================================
 
+
+#############################################
+# Utility command for edit_cache
+
+build core\vendor\CMakeFiles\edit_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\Rao\source\repos\spiral-flap\out\build\x64-Debug\core\vendor && "D:\Visual Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build core\vendor\edit_cache: phony core\vendor\CMakeFiles\edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build core\vendor\CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\Rao\source\repos\spiral-flap\out\build\x64-Debug\core\vendor && "D:\Visual Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" --regenerate-during-build -SC:\Users\Rao\source\repos\spiral-flap -BC:\Users\Rao\source\repos\spiral-flap\out\build\x64-Debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build core\vendor\rebuild_cache: phony core\vendor\CMakeFiles\rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# C:/Users/Rao/source/repos/spiral-flap/core/vendor/CMakeLists.txt
+# =============================================================================
+
 # =============================================================================
 # Object build statements for STATIC_LIBRARY target imgui
 
@@ -194,7 +222,35 @@ build core\vendor\imgui\rebuild_cache: phony core\vendor\imgui\CMakeFiles\rebuil
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# C:/Users/Rao/source/repos/spiral-flap/core/CMakeLists.txt
+# C:/Users/Rao/source/repos/spiral-flap/core/vendor/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for edit_cache
+
+build core\vendor\raylib\CMakeFiles\edit_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\Rao\source\repos\spiral-flap\out\build\x64-Debug\core\vendor\raylib && "D:\Visual Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build core\vendor\raylib\edit_cache: phony core\vendor\raylib\CMakeFiles\edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build core\vendor\raylib\CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\Rao\source\repos\spiral-flap\out\build\x64-Debug\core\vendor\raylib && "D:\Visual Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" --regenerate-during-build -SC:\Users\Rao\source\repos\spiral-flap -BC:\Users\Rao\source\repos\spiral-flap\out\build\x64-Debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build core\vendor\raylib\rebuild_cache: phony core\vendor\raylib\CMakeFiles\rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# C:/Users/Rao/source/repos/spiral-flap/core/vendor/CMakeLists.txt
 # =============================================================================
 
 # =============================================================================
@@ -209,7 +265,7 @@ build cmake_object_order_depends_target_rlimgui: phony || cmake_object_order_dep
 build core\vendor\rlimgui\CMakeFiles\rlimgui.dir\rlImGui.cpp.obj: CXX_COMPILER__rlimgui_unscanned_Debug C$:\Users\Rao\source\repos\spiral-flap\core\vendor\rlimgui\rlImGui.cpp || cmake_object_order_depends_target_rlimgui
   CONFIG = Debug
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
-  INCLUDES = -IC:\Users\Rao\source\repos\spiral-flap\core\vendor\rlimgui -IC:\Users\Rao\source\repos\spiral-flap\core\vendor\imgui
+  INCLUDES = -IC:\Users\Rao\source\repos\spiral-flap\core\vendor\rlimgui -IC:\Users\Rao\source\repos\spiral-flap\core\vendor\imgui -external:IC:\Users\Rao\source\repos\spiral-flap\core\vendor\raylib\include -external:W0
   OBJECT_DIR = core\vendor\rlimgui\CMakeFiles\rlimgui.dir
   OBJECT_FILE_DIR = core\vendor\rlimgui\CMakeFiles\rlimgui.dir
   TARGET_COMPILE_PDB = core\vendor\rlimgui\CMakeFiles\rlimgui.dir\rlimgui.pdb
@@ -274,7 +330,7 @@ build cmake_object_order_depends_target_spiral-flap: phony || cmake_object_order
 build src\CMakeFiles\spiral-flap.dir\main.cpp.obj: CXX_COMPILER__spiral-flap_unscanned_Debug C$:\Users\Rao\source\repos\spiral-flap\src\main.cpp || cmake_object_order_depends_target_spiral-flap
   CONFIG = Debug
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
-  INCLUDES = -IC:\Users\Rao\source\repos\spiral-flap\src -IC:\Users\Rao\source\repos\spiral-flap\core\vendor\raylib\include -IC:\Users\Rao\source\repos\spiral-flap\core\vendor\imgui -IC:\Users\Rao\source\repos\spiral-flap\core\vendor\rlimgui
+  INCLUDES = -IC:\Users\Rao\source\repos\spiral-flap\src -IC:\Users\Rao\source\repos\spiral-flap\core\vendor\imgui -IC:\Users\Rao\source\repos\spiral-flap\core\vendor\rlimgui -external:IC:\Users\Rao\source\repos\spiral-flap\core\vendor\raylib\include -external:W0
   OBJECT_DIR = src\CMakeFiles\spiral-flap.dir
   OBJECT_FILE_DIR = src\CMakeFiles\spiral-flap.dir
   TARGET_COMPILE_PDB = src\CMakeFiles\spiral-flap.dir\
@@ -283,7 +339,16 @@ build src\CMakeFiles\spiral-flap.dir\main.cpp.obj: CXX_COMPILER__spiral-flap_uns
 build src\CMakeFiles\spiral-flap.dir\gameloop.cpp.obj: CXX_COMPILER__spiral-flap_unscanned_Debug C$:\Users\Rao\source\repos\spiral-flap\src\gameloop.cpp || cmake_object_order_depends_target_spiral-flap
   CONFIG = Debug
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
-  INCLUDES = -IC:\Users\Rao\source\repos\spiral-flap\src -IC:\Users\Rao\source\repos\spiral-flap\core\vendor\raylib\include -IC:\Users\Rao\source\repos\spiral-flap\core\vendor\imgui -IC:\Users\Rao\source\repos\spiral-flap\core\vendor\rlimgui
+  INCLUDES = -IC:\Users\Rao\source\repos\spiral-flap\src -IC:\Users\Rao\source\repos\spiral-flap\core\vendor\imgui -IC:\Users\Rao\source\repos\spiral-flap\core\vendor\rlimgui -external:IC:\Users\Rao\source\repos\spiral-flap\core\vendor\raylib\include -external:W0
+  OBJECT_DIR = src\CMakeFiles\spiral-flap.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\spiral-flap.dir
+  TARGET_COMPILE_PDB = src\CMakeFiles\spiral-flap.dir\
+  TARGET_PDB = C:\Users\Rao\source\repos\spiral-flap\bin\spiral-flap.pdb
+
+build src\CMakeFiles\spiral-flap.dir\map.cpp.obj: CXX_COMPILER__spiral-flap_unscanned_Debug C$:\Users\Rao\source\repos\spiral-flap\src\map.cpp || cmake_object_order_depends_target_spiral-flap
+  CONFIG = Debug
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
+  INCLUDES = -IC:\Users\Rao\source\repos\spiral-flap\src -IC:\Users\Rao\source\repos\spiral-flap\core\vendor\imgui -IC:\Users\Rao\source\repos\spiral-flap\core\vendor\rlimgui -external:IC:\Users\Rao\source\repos\spiral-flap\core\vendor\raylib\include -external:W0
   OBJECT_DIR = src\CMakeFiles\spiral-flap.dir
   OBJECT_FILE_DIR = src\CMakeFiles\spiral-flap.dir
   TARGET_COMPILE_PDB = src\CMakeFiles\spiral-flap.dir\
@@ -297,11 +362,11 @@ build src\CMakeFiles\spiral-flap.dir\gameloop.cpp.obj: CXX_COMPILER__spiral-flap
 #############################################
 # Link the executable C:\Users\Rao\source\repos\spiral-flap\bin\spiral-flap.exe
 
-build C$:\Users\Rao\source\repos\spiral-flap\bin\spiral-flap.exe: CXX_EXECUTABLE_LINKER__spiral-flap_Debug src\CMakeFiles\spiral-flap.dir\main.cpp.obj src\CMakeFiles\spiral-flap.dir\gameloop.cpp.obj | core\vendor\imgui\imgui.lib core\vendor\rlimgui\rlimgui.lib core\vendor\imgui\imgui.lib || core\vendor\imgui\imgui.lib core\vendor\rlimgui\rlimgui.lib
+build C$:\Users\Rao\source\repos\spiral-flap\bin\spiral-flap.exe: CXX_EXECUTABLE_LINKER__spiral-flap_Debug src\CMakeFiles\spiral-flap.dir\main.cpp.obj src\CMakeFiles\spiral-flap.dir\gameloop.cpp.obj src\CMakeFiles\spiral-flap.dir\map.cpp.obj | C$:\Users\Rao\source\repos\spiral-flap\core\vendor\raylib\lib\windows\raylib.lib core\vendor\imgui\imgui.lib core\vendor\rlimgui\rlimgui.lib C$:\Users\Rao\source\repos\spiral-flap\core\vendor\raylib\lib\windows\raylib.lib core\vendor\imgui\imgui.lib || core\vendor\imgui\imgui.lib core\vendor\rlimgui\rlimgui.lib
   CONFIG = Debug
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
-  LINK_LIBRARIES = raylib.lib  core\vendor\imgui\imgui.lib  core\vendor\rlimgui\rlimgui.lib  winmm.lib  gdi32.lib  opengl32.lib  raylib.lib  core\vendor\imgui\imgui.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
+  LINK_LIBRARIES = C:\Users\Rao\source\repos\spiral-flap\core\vendor\raylib\lib\windows\raylib.lib  core\vendor\imgui\imgui.lib  core\vendor\rlimgui\rlimgui.lib  winmm.lib  gdi32.lib  opengl32.lib  C:\Users\Rao\source\repos\spiral-flap\core\vendor\raylib\lib\windows\raylib.lib  core\vendor\imgui\imgui.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
   OBJECT_DIR = src\CMakeFiles\spiral-flap.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
@@ -363,7 +428,14 @@ build all: phony core\all src\all
 #############################################
 # Folder: C:/Users/Rao/source/repos/spiral-flap/out/build/x64-Debug/core
 
-build core\all: phony core\vendor\imgui\all core\vendor\rlimgui\all
+build core\all: phony core\vendor\all
+
+# =============================================================================
+
+#############################################
+# Folder: C:/Users/Rao/source/repos/spiral-flap/out/build/x64-Debug/core/vendor
+
+build core\vendor\all: phony core\vendor\imgui\all core\vendor\raylib\all core\vendor\rlimgui\all
 
 # =============================================================================
 
@@ -371,6 +443,13 @@ build core\all: phony core\vendor\imgui\all core\vendor\rlimgui\all
 # Folder: C:/Users/Rao/source/repos/spiral-flap/out/build/x64-Debug/core/vendor/imgui
 
 build core\vendor\imgui\all: phony core\vendor\imgui\imgui.lib
+
+# =============================================================================
+
+#############################################
+# Folder: C:/Users/Rao/source/repos/spiral-flap/out/build/x64-Debug/core/vendor/raylib
+
+build core\vendor\raylib\all: phony
 
 # =============================================================================
 
@@ -393,14 +472,14 @@ build src\all: phony C$:\Users\Rao\source\repos\spiral-flap\bin\spiral-flap.exe
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja C$:\Users\Rao\source\repos\spiral-flap\out\build\x64-Debug\cmake_install.cmake C$:\Users\Rao\source\repos\spiral-flap\out\build\x64-Debug\core\cmake_install.cmake C$:\Users\Rao\source\repos\spiral-flap\out\build\x64-Debug\core\vendor\imgui\cmake_install.cmake C$:\Users\Rao\source\repos\spiral-flap\out\build\x64-Debug\core\vendor\rlimgui\cmake_install.cmake C$:\Users\Rao\source\repos\spiral-flap\out\build\x64-Debug\src\cmake_install.cmake: RERUN_CMAKE | C$:\Users\Rao\source\repos\spiral-flap\CMakeLists.txt C$:\Users\Rao\source\repos\spiral-flap\core\CMakeLists.txt C$:\Users\Rao\source\repos\spiral-flap\core\vendor\imgui\CMakeLists.txt C$:\Users\Rao\source\repos\spiral-flap\core\vendor\rlimgui\CMakeLists.txt C$:\Users\Rao\source\repos\spiral-flap\src\CMakeLists.txt CMakeCache.txt CMakeFiles\4.1.1-msvc1\CMakeCXXCompiler.cmake CMakeFiles\4.1.1-msvc1\CMakeRCCompiler.cmake CMakeFiles\4.1.1-msvc1\CMakeSystem.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\CMakeCXXInformation.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\CMakeCommonLanguageInclude.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\CMakeGenericSystem.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\CMakeInitializeConfigs.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\CMakeLanguageInformation.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\CMakeRCInformation.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\CMakeSystemSpecificInformation.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\CMakeSystemSpecificInitialize.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Compiler\CMakeCommonCompilerMacros.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Compiler\MSVC-CXX.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Compiler\MSVC.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Internal\CMakeCXXLinkerInformation.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Internal\CMakeCommonLinkerInformation.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Linker\MSVC-CXX.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Linker\MSVC.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Platform\Linker\Windows-MSVC-CXX.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Platform\Linker\Windows-MSVC.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Platform\Windows-Initialize.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Platform\Windows-MSVC-CXX.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Platform\Windows-MSVC.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Platform\Windows.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Platform\WindowsPaths.cmake
+build build.ninja C$:\Users\Rao\source\repos\spiral-flap\out\build\x64-Debug\cmake_install.cmake C$:\Users\Rao\source\repos\spiral-flap\out\build\x64-Debug\core\cmake_install.cmake C$:\Users\Rao\source\repos\spiral-flap\out\build\x64-Debug\core\vendor\cmake_install.cmake C$:\Users\Rao\source\repos\spiral-flap\out\build\x64-Debug\core\vendor\imgui\cmake_install.cmake C$:\Users\Rao\source\repos\spiral-flap\out\build\x64-Debug\core\vendor\raylib\cmake_install.cmake C$:\Users\Rao\source\repos\spiral-flap\out\build\x64-Debug\core\vendor\rlimgui\cmake_install.cmake C$:\Users\Rao\source\repos\spiral-flap\out\build\x64-Debug\src\cmake_install.cmake: RERUN_CMAKE | C$:\Users\Rao\source\repos\spiral-flap\CMakeLists.txt C$:\Users\Rao\source\repos\spiral-flap\core\CMakeLists.txt C$:\Users\Rao\source\repos\spiral-flap\core\vendor\CMakeLists.txt C$:\Users\Rao\source\repos\spiral-flap\core\vendor\imgui\CMakeLists.txt C$:\Users\Rao\source\repos\spiral-flap\core\vendor\raylib\CMakeLists.txt C$:\Users\Rao\source\repos\spiral-flap\core\vendor\rlimgui\CMakeLists.txt C$:\Users\Rao\source\repos\spiral-flap\src\CMakeLists.txt CMakeCache.txt CMakeFiles\4.1.1-msvc1\CMakeCCompiler.cmake CMakeFiles\4.1.1-msvc1\CMakeCXXCompiler.cmake CMakeFiles\4.1.1-msvc1\CMakeRCCompiler.cmake CMakeFiles\4.1.1-msvc1\CMakeSystem.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\CMakeCInformation.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\CMakeCXXInformation.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\CMakeCommonLanguageInclude.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\CMakeGenericSystem.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\CMakeInitializeConfigs.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\CMakeLanguageInformation.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\CMakeRCInformation.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\CMakeSystemSpecificInformation.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\CMakeSystemSpecificInitialize.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Compiler\CMakeCommonCompilerMacros.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Compiler\MSVC-C.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Compiler\MSVC-CXX.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Compiler\MSVC.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Internal\CMakeCLinkerInformation.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Internal\CMakeCXXLinkerInformation.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Internal\CMakeCommonLinkerInformation.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Linker\MSVC-C.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Linker\MSVC-CXX.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Linker\MSVC.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Platform\Linker\Windows-MSVC-C.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Platform\Linker\Windows-MSVC-CXX.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Platform\Linker\Windows-MSVC.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Platform\Windows-Initialize.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Platform\Windows-MSVC-C.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Platform\Windows-MSVC-CXX.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Platform\Windows-MSVC.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Platform\Windows.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Platform\WindowsPaths.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build C$:\Users\Rao\source\repos\spiral-flap\CMakeLists.txt C$:\Users\Rao\source\repos\spiral-flap\core\CMakeLists.txt C$:\Users\Rao\source\repos\spiral-flap\core\vendor\imgui\CMakeLists.txt C$:\Users\Rao\source\repos\spiral-flap\core\vendor\rlimgui\CMakeLists.txt C$:\Users\Rao\source\repos\spiral-flap\src\CMakeLists.txt CMakeCache.txt CMakeFiles\4.1.1-msvc1\CMakeCXXCompiler.cmake CMakeFiles\4.1.1-msvc1\CMakeRCCompiler.cmake CMakeFiles\4.1.1-msvc1\CMakeSystem.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\CMakeCXXInformation.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\CMakeCommonLanguageInclude.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\CMakeGenericSystem.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\CMakeInitializeConfigs.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\CMakeLanguageInformation.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\CMakeRCInformation.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\CMakeSystemSpecificInformation.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\CMakeSystemSpecificInitialize.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Compiler\CMakeCommonCompilerMacros.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Compiler\MSVC-CXX.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Compiler\MSVC.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Internal\CMakeCXXLinkerInformation.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Internal\CMakeCommonLinkerInformation.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Linker\MSVC-CXX.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Linker\MSVC.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Platform\Linker\Windows-MSVC-CXX.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Platform\Linker\Windows-MSVC.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Platform\Windows-Initialize.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Platform\Windows-MSVC-CXX.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Platform\Windows-MSVC.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Platform\Windows.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Platform\WindowsPaths.cmake: phony
+build C$:\Users\Rao\source\repos\spiral-flap\CMakeLists.txt C$:\Users\Rao\source\repos\spiral-flap\core\CMakeLists.txt C$:\Users\Rao\source\repos\spiral-flap\core\vendor\CMakeLists.txt C$:\Users\Rao\source\repos\spiral-flap\core\vendor\imgui\CMakeLists.txt C$:\Users\Rao\source\repos\spiral-flap\core\vendor\raylib\CMakeLists.txt C$:\Users\Rao\source\repos\spiral-flap\core\vendor\rlimgui\CMakeLists.txt C$:\Users\Rao\source\repos\spiral-flap\src\CMakeLists.txt CMakeCache.txt CMakeFiles\4.1.1-msvc1\CMakeCCompiler.cmake CMakeFiles\4.1.1-msvc1\CMakeCXXCompiler.cmake CMakeFiles\4.1.1-msvc1\CMakeRCCompiler.cmake CMakeFiles\4.1.1-msvc1\CMakeSystem.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\CMakeCInformation.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\CMakeCXXInformation.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\CMakeCommonLanguageInclude.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\CMakeGenericSystem.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\CMakeInitializeConfigs.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\CMakeLanguageInformation.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\CMakeRCInformation.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\CMakeSystemSpecificInformation.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\CMakeSystemSpecificInitialize.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Compiler\CMakeCommonCompilerMacros.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Compiler\MSVC-C.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Compiler\MSVC-CXX.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Compiler\MSVC.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Internal\CMakeCLinkerInformation.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Internal\CMakeCXXLinkerInformation.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Internal\CMakeCommonLinkerInformation.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Linker\MSVC-C.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Linker\MSVC-CXX.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Linker\MSVC.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Platform\Linker\Windows-MSVC-C.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Platform\Linker\Windows-MSVC-CXX.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Platform\Linker\Windows-MSVC.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Platform\Windows-Initialize.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Platform\Windows-MSVC-C.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Platform\Windows-MSVC-CXX.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Platform\Windows-MSVC.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Platform\Windows.cmake D$:\Visual$ Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.1\Modules\Platform\WindowsPaths.cmake: phony
 
 
 #############################################

@@ -15,6 +15,8 @@ int main() {
 		game.Draw();
 	}
 
+
+
 	CloseWindow();
 	return 0;
 }

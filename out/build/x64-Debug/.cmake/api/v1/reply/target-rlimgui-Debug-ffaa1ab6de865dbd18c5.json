@@ -78,6 +78,11 @@
 				{
 					"backtrace" : 2,
 					"path" : "C:/Users/Rao/source/repos/spiral-flap/core/vendor/imgui"
+				},
+				{
+					"backtrace" : 2,
+					"isSystem" : true,
+					"path" : "C:/Users/Rao/source/repos/spiral-flap/core/vendor/raylib/include"
 				}
 			],
 			"language" : "CXX",
