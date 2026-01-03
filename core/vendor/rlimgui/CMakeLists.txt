@@ -13,6 +13,5 @@ target_link_libraries(rlimgui PUBLIC
     imgui
     raylib
 )
-
 # Set C++ standard
 target_compile_features(rlimgui PUBLIC cxx_std_17)
