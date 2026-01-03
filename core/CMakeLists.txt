@@ -1,21 +1,2 @@
-# Add Internal-Lib subdirectory
-#add_subdirectory(Internal-Lib)
-
-# Vendor libraries
-add_subdirectory(vendor/imgui)
-add_subdirectory(vendor/rlimgui)
-
-# Raylib (pre-built)
-add_library(raylib STATIC IMPORTED)
-
-if(WIN32)
-    set_target_properties(raylib PROPERTIES
-        IMPORTED_LOCATION "${CMAKE_CURRENT_SOURCE_DIR}/vendor/raylib/lib/windows/raylib.lib"
-        INTERFACE_INCLUDE_DIRECTORIES "${CMAKE_CURRENT_SOURCE_DIR}/vendor/raylib/include"
-    )
-elseif(UNIX)
-    set_target_properties(raylib PROPERTIES
-        IMPORTED_LOCATION "${CMAKE_CURRENT_SOURCE_DIR}/vendor/raylib/lib/linux/libraylib.a"
-        INTERFACE_INCLUDE_DIRECTORIES "${CMAKE_CURRENT_SOURCE_DIR}/vendor/raylib/include"
-    )
-endif()
+# Add vendor libraries (this will include imgui, rlimgui, and raylib)
+add_subdirectory(vendor)
