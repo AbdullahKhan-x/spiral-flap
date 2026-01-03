@@ -5,12 +5,13 @@ add_executable(spiral-flap
 
 target_include_directories(spiral-flap PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}
+    ${CMAKE_SOURCE_DIR}/core/vendor/raylib/include
 )
 
 target_link_libraries(spiral-flap PRIVATE
-    rlimgui
-    imgui
     raylib
+    imgui
+    rlimgui
 )
 
 set_target_properties(spiral-flap PROPERTIES
