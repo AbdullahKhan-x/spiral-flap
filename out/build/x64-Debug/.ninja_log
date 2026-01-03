@@ -1,0 +1,8 @@
+# ninja log v6
+32	128	7891308826140218	src/CMakeFiles/spiral-flap.dir/main.cpp.obj	796d1333f2030d97
+37	130	7891308826185374	src/CMakeFiles/spiral-flap.dir/gameloop.cpp.obj	1d4cc2e1487d8346
+19	369	7891308826009461	core/vendor/imgui/CMakeFiles/imgui.dir/imgui_tables.cpp.obj	12110cb6e157936e
+12	380	7891308825939468	core/vendor/imgui/CMakeFiles/imgui.dir/imgui_demo.cpp.obj	4c187486c2a295eb
+16	488	7891308825979485	core/vendor/imgui/CMakeFiles/imgui.dir/imgui_draw.cpp.obj	1655decb1c556734
+24	510	7891308826054972	core/vendor/imgui/CMakeFiles/imgui.dir/imgui_widgets.cpp.obj	ef69aa420736c8a2
+8	732	7891308825904291	core/vendor/imgui/CMakeFiles/imgui.dir/imgui.cpp.obj	7c9e6e6ddbb3fa90
