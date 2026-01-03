@@ -29,13 +29,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 1,
-				"parent" : 0
-			},
-			{
-				"command" : 1,
-				"file" : 0,
-				"line" : 11,
+				"line" : 5,
 				"parent" : 0
 			},
 			{
@@ -45,9 +39,15 @@
 				"parent" : 0
 			},
 			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 26,
+				"parent" : 0
+			},
+			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 6,
+				"line" : 12,
 				"parent" : 0
 			}
 		]
@@ -68,16 +68,17 @@
 					"path" : "C:/Users/Rao/source/repos/spiral-flap/src"
 				},
 				{
-					"backtrace" : 4,
-					"path" : "C:/Users/Rao/source/repos/spiral-flap/core/vendor/raylib/include"
-				},
-				{
 					"backtrace" : 2,
 					"path" : "C:/Users/Rao/source/repos/spiral-flap/core/vendor/imgui"
 				},
 				{
 					"backtrace" : 2,
 					"path" : "C:/Users/Rao/source/repos/spiral-flap/core/vendor/rlimgui"
+				},
+				{
+					"backtrace" : 4,
+					"isSystem" : true,
+					"path" : "C:/Users/Rao/source/repos/spiral-flap/core/vendor/raylib/include"
 				}
 			],
 			"language" : "CXX",
@@ -92,7 +93,8 @@
 			"sourceIndexes" : 
 			[
 				0,
-				1
+				1,
+				2
 			]
 		}
 	],
@@ -126,7 +128,7 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "raylib.lib",
+				"fragment" : "C:\\Users\\Rao\\source\\repos\\spiral-flap\\core\\vendor\\raylib\\lib\\windows\\raylib.lib",
 				"role" : "libraries"
 			},
 			{
@@ -156,7 +158,7 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "raylib.lib",
+				"fragment" : "C:\\Users\\Rao\\source\\repos\\spiral-flap\\core\\vendor\\raylib\\lib\\windows\\raylib.lib",
 				"role" : "libraries"
 			},
 			{
@@ -185,7 +187,8 @@
 			"sourceIndexes" : 
 			[
 				0,
-				1
+				1,
+				2
 			]
 		}
 	],
@@ -201,6 +204,12 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src/gameloop.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/map.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

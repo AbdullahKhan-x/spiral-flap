@@ -9,7 +9,7 @@
 					"childIndexes" : 
 					[
 						1,
-						4
+						6
 					],
 					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
 					"minimumCMakeVersion" : 
@@ -23,8 +23,7 @@
 					"build" : "core",
 					"childIndexes" : 
 					[
-						2,
-						3
+						2
 					],
 					"jsonFile" : "directory-core-Debug-e3757ce4a321da3133c4.json",
 					"minimumCMakeVersion" : 
@@ -36,13 +35,30 @@
 					"source" : "core"
 				},
 				{
+					"build" : "core/vendor",
+					"childIndexes" : 
+					[
+						3,
+						4,
+						5
+					],
+					"jsonFile" : "directory-core.vendor-Debug-bd212d86d5b0d57ef821.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "core/vendor"
+				},
+				{
 					"build" : "core/vendor/imgui",
 					"jsonFile" : "directory-core.vendor.imgui-Debug-002e586b3261c08f233b.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.5"
 					},
-					"parentIndex" : 1,
+					"parentIndex" : 2,
 					"projectIndex" : 0,
 					"source" : "core/vendor/imgui",
 					"targetIndexes" : 
@@ -51,13 +67,24 @@
 					]
 				},
 				{
+					"build" : "core/vendor/raylib",
+					"jsonFile" : "directory-core.vendor.raylib-Debug-6392213acf20adc4c115.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 0,
+					"source" : "core/vendor/raylib"
+				},
+				{
 					"build" : "core/vendor/rlimgui",
 					"jsonFile" : "directory-core.vendor.rlimgui-Debug-23823c88e8bc9244ccab.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.5"
 					},
-					"parentIndex" : 1,
+					"parentIndex" : 2,
 					"projectIndex" : 0,
 					"source" : "core/vendor/rlimgui",
 					"targetIndexes" : 
@@ -70,7 +97,7 @@
 					"jsonFile" : "directory-src-Debug-c94b7c2814d5a21df52c.json",
 					"minimumCMakeVersion" : 
 					{
-						"string" : "3.5"
+						"string" : "3.10"
 					},
 					"parentIndex" : 0,
 					"projectIndex" : 0,
@@ -91,7 +118,9 @@
 						1,
 						2,
 						3,
-						4
+						4,
+						5,
+						6
 					],
 					"name" : "spiral-flap",
 					"targetIndexes" : 
@@ -105,23 +134,23 @@
 			"targets" : 
 			[
 				{
-					"directoryIndex" : 2,
+					"directoryIndex" : 3,
 					"id" : "imgui::@8601ed4dc1a5eaa7d3f2",
 					"jsonFile" : "target-imgui-Debug-5b20ba019556aca5d43e.json",
 					"name" : "imgui",
 					"projectIndex" : 0
 				},
 				{
-					"directoryIndex" : 3,
+					"directoryIndex" : 5,
 					"id" : "rlimgui::@ed36ad810b9c2d12cf3a",
-					"jsonFile" : "target-rlimgui-Debug-975414db9bdb0b2b0fdf.json",
+					"jsonFile" : "target-rlimgui-Debug-ffaa1ab6de865dbd18c5.json",
 					"name" : "rlimgui",
 					"projectIndex" : 0
 				},
 				{
-					"directoryIndex" : 4,
+					"directoryIndex" : 6,
 					"id" : "spiral-flap::@145eef247bfb46b6828c",
-					"jsonFile" : "target-spiral-flap-Debug-95f1886409d3a87c7206.json",
+					"jsonFile" : "target-spiral-flap-Debug-454e720a428e1b2c1c9a.json",
 					"name" : "spiral-flap",
 					"projectIndex" : 0
 				}
