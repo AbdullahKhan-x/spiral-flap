@@ -1,5 +1,3 @@
-cmake_minimum_required(VERSION 3.10)
-project(spiral-flap)
 
 # Define the executable once
 add_executable(spiral-flap
