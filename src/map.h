@@ -2,7 +2,6 @@
 #include "raylib.h"
 
 namespace Map {
-
     struct Config {
         float growthRate;
         float angleStep;
@@ -17,5 +16,5 @@ namespace Map {
 
     void Init(Data& data, const Config& config);
     void Draw(const Data& data);
-
+    void Cleanup(Data& data);
 }

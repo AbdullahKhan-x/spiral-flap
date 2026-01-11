@@ -8,23 +8,22 @@ namespace Bird {
     };
 
     struct Config {
-        float gravity;        // inward pull
-        float flapStrength;   // outward impulse
-        float radius;         // draw size
-        float corridorWidth;  // total width
-        float forwardSpeed;   // angular speed
+        float gravity;        // pulls inward
+        float flapStrength;   // pushes outward
+        float radius;         // bird size
+        float forwardSpeed;   // angular speed around spiral
     };
 
     struct Data {
-        float angle;
-        float radialOffset;
-        float radialVelocity;
+        float angle;          // position along spiral
+        float distance;       // distance from center
+        float velocity;       // radial velocity (in/out)
         States state;
-        float flapTimer;      // For visual flapping animation
     };
 
-    void Init(Data& data, float startAngle);
+    void Init(Data& data, float startAngle, float startDistance);
     void Update(Data& data, const Config& config, float dt);
+    bool CheckCollision(const Data& data, float spiralGrowthRate, float safeDistance);
     void Flap(Data& data, const Config& config);
-    void Draw(const Data& data, const Config& config, const Vector2& center, float spiralA);
+    void Draw(const Data& data, const Config& config, const Vector2& center);
 }

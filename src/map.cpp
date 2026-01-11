@@ -7,7 +7,6 @@ void Map::Init(Data& data, const Config& config)
     data.points = new Vector2[data.count];
 
     float angle = 0.0f;
-
     for (int i = 0; i < data.count; i++) {
         float r = config.growthRate * angle;
         data.points[i] = {
@@ -21,6 +20,11 @@ void Map::Init(Data& data, const Config& config)
 void Map::Draw(const Data& data)
 {
     for (int i = 0; i < data.count - 1; i++) {
-        DrawLineEx(data.points[i], data.points[i + 1], 3.0f, BLUE);
+        DrawLineEx(data.points[i], data.points[i + 1], 3.0f, WHITE);
     }
+}
+
+void Map::Cleanup(Data& data)
+{
+    delete[] data.points;
 }

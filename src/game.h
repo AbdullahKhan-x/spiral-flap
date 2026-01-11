@@ -1,12 +1,12 @@
 #pragma once
 #include "map.h"
-#include "bird.h"
+#include "bird.h"  // CHANGE THIS LINE
 
 struct Game {
     Map::Data map;
-    Bird::Data bird;
-
     Map::Config mapConfig;
+
+    Bird::Data bird;
     Bird::Config birdConfig;
 
     void Init();
