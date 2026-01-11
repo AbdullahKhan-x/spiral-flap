@@ -3,8 +3,8 @@
 add_executable(spiral-flap
    main.cpp
    game.cpp
-   bird.cpp
-   map.cpp
+   menu.cpp
+   score.cpp
 )
 
 # Set up include directories
