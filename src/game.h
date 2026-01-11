@@ -8,6 +8,10 @@ struct Game {
 
     Bird::Data bird;
     Bird::Config birdConfig;
+    Vector2 smoothTarget;
+    float smoothRotation;
+
+    Camera2D camera;
 
     void Init();
     void Input();
