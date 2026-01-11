@@ -54,7 +54,7 @@ cd build
 
 REM --- ATTEMPT 3: Visual Studio 2019 ---
 echo Checking for Visual Studio 2019...
-cmake -G "Visual Studio 16 2019" -A x64 .. >nul 2>&1
+cmake -G "Visual Studio 16 2019" -A x64 .. 2>&1
 if %ERRORLEVEL% EQU 0 (
     echo [OK] Visual Studio 2019 detected and configured!
     set VS_USED=2019
