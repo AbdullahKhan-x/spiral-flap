@@ -1,24 +1,30 @@
-#ifndef BIRD_H
-#define BIRD_H
-
+#pragma once
 #include "raylib.h"
 
-struct Bird {
-    Vector2 position;
-    float velocityY;
-    float gravity;
-    float flapStrength;
-    float radius;
+namespace Bird {
+    enum States {
+        ALIVE,
+        DEAD
+    };
 
-    // "Constructor"
-    Bird(float startX, float startY);
+    struct Config {
+        float gravity;        // inward pull
+        float flapStrength;   // outward impulse
+        float radius;         // draw size
+        float corridorWidth;  // total width
+        float forwardSpeed;   // angular speed
+    };
 
-    void Update();   // gravity + movement
-    void Flap();     // input
-    void Draw();     // rendering
+    struct Data {
+        float angle;
+        float radialOffset;
+        float radialVelocity;
+        States state;
+        float flapTimer;      // For visual flapping animation
+    };
 
-    Rectangle GetBounds() const;
-};
-
-#endif
-
+    void Init(Data& data, float startAngle);
+    void Update(Data& data, const Config& config, float dt);
+    void Flap(Data& data, const Config& config);
+    void Draw(const Data& data, const Config& config, const Vector2& center, float spiralA);
+}

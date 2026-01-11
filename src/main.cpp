@@ -1,22 +1,21 @@
 #include "raylib.h"
-#include "gameloop.h"
-#include "bird.h"
+#include "game.h"
 
-int main() {
-	const int SCREEN_WIDTH = 800;
-	const int SCREEN_HEIGHT = 600;
-	InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "spiral flap");
-	SetTargetFPS(30);
-	GameLoop game;   // CAPITAL G — must match class name
+int main()
+{
+    InitWindow(800, 600, "Spiral Flap");
+    SetTargetFPS(60);
 
-	while (!WindowShouldClose()) {
-		game.Input();
-	    game.Update();
-		game.Draw();
-	}
+    Game game;
+    game.Init();
 
+    while (!WindowShouldClose()) {
+        float dt = GetFrameTime();
+        game.Input();
+        game.Update(dt);
+        game.Draw();
+    }
 
-
-	CloseWindow();
-	return 0;
+    CloseWindow();
+    return 0;
 }

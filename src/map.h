@@ -1,36 +1,21 @@
-#ifndef MAP_H
-#define MAP_H
+#pragma once
+#include "raylib.h"
 
-#include <vector>
-#include <raylib.h>
+namespace Map {
 
-// Struct to hold a single point on the spiral
-struct SpiralPoint {
-    float x;
-    float y;
-    float angle;  // Store angle for reference
-};
+    struct Config {
+        float growthRate;
+        float angleStep;
+        int pointCount;
+        Vector2 center;
+    };
 
-// Struct to hold spiral configuration
-struct SpiralConfig {
-    float a;              // Growth rate of spiral
-    float angleStep;      // Step size for generating points
-    Vector2 center;       // Center point of spiral
-};
+    struct Data {
+        Vector2* points;
+        int count;
+    };
 
-// Struct to manage infinite spiral generation
-struct SpiralMap {
-    std::vector<SpiralPoint> points;
-    float currentAngle;
-    SpiralConfig config;
-    int chunkSize;  // How many points to generate at once
-};
+    void Init(Data& data, const Config& config);
+    void Draw(const Data& data);
 
-// Function declarations
-void initSpiralMap(SpiralMap& map, const SpiralConfig& config, int chunkSize);
-void generateNextChunk(SpiralMap& map);
-void cleanOldPoints(SpiralMap& map, float minAngle);
-void drawSpiralMap(const SpiralMap& map, Color color, float thickness);
-SpiralPoint getSpiralPointAtAngle(const SpiralConfig& config, float angle);
-
-#endif
+}

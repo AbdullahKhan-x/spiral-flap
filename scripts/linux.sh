@@ -29,7 +29,7 @@ echo ""
 echo "Building project..."
 if ! cmake --build .; then
     echo ""
-    echo "❌ ERROR: Build failed! [it's no big deal you can figure it out I believe in you both Aamir and Fatima]"
+    echo "❌ ERROR: Build failed!"
     echo "Check the compilation errors above."
     exit 1
 fi

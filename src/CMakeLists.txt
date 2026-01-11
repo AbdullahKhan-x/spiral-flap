@@ -1,9 +1,10 @@
 
 # Define the executable once
 add_executable(spiral-flap
-    main.cpp
-    gameloop.cpp
-    map.cpp
+   main.cpp
+   game.cpp
+   bird.cpp
+   map.cpp
 )
 
 # Set up include directories

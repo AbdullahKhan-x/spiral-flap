@@ -11,7 +11,7 @@ echo.
 
 REM --- AUTO CLEANING STEP ---
 if exist build (
-    echo Cleaning old build cache to prevent conflicts...
+    echo Cleaning old build cache...
     rd /s /q build
     timeout /t 1 /nobreak >nul
 )
@@ -22,100 +22,160 @@ cd build
 
 REM --- ATTEMPT 1: Visual Studio 2026 ---
 echo Checking for Visual Studio 2026...
-cmake -G "Visual Studio 18 2026" .. >nul 2>&1
+cmake -G "Visual Studio 18 2026" -A x64 .. >nul 2>&1
 if %ERRORLEVEL% EQU 0 (
     echo [OK] Visual Studio 2026 detected and configured!
     set VS_USED=2026
     goto :BUILD_STEP
 )
 
-REM Clean up failed attempt
+REM Clean and recreate build directory for next attempt
 cd ..
-if exist build rd /s /q build
+rd /s /q build >nul 2>&1
 timeout /t 1 /nobreak >nul
 mkdir build
 cd build
 
 REM --- ATTEMPT 2: Visual Studio 2022 ---
-echo VS 2026 not found. Checking for Visual Studio 2022...
-cmake -G "Visual Studio 17 2022" .. >nul 2>&1
+echo Checking for Visual Studio 2022...
+cmake -G "Visual Studio 17 2022" -A x64 .. >nul 2>&1
 if %ERRORLEVEL% EQU 0 (
     echo [OK] Visual Studio 2022 detected and configured!
     set VS_USED=2022
     goto :BUILD_STEP
 )
 
-REM Clean up failed attempt
+REM Clean and recreate build directory for next attempt
 cd ..
-if exist build rd /s /q build
+rd /s /q build >nul 2>&1
 timeout /t 1 /nobreak >nul
 mkdir build
 cd build
 
-REM --- ATTEMPT 3: Auto-detect ANY Visual Studio version ---
-echo VS 2022 not found either. Scanning for ANY Visual Studio installation...
-echo.
-
-REM List of all Visual Studio generators to try (newest to oldest)
-set "GENERATORS=Visual Studio 18 2026|Visual Studio 17 2022|Visual Studio 16 2019|Visual Studio 15 2017|Visual Studio 14 2015"
-
-for %%G in (%GENERATORS%) do (
-    echo Trying: %%G...
-    cmake -G "%%G" .. >nul 2>&1
-    if !ERRORLEVEL! EQU 0 (
-        echo [OK] Found and configured: %%G
-        set VS_USED=%%G
-        goto :BUILD_STEP
-    )
-    REM Clean up after each failed attempt
-    cd ..
-    if exist build rd /s /q build
-    timeout /t 1 /nobreak >nul
-    mkdir build
-    cd build
+REM --- ATTEMPT 3: Visual Studio 2019 ---
+echo Checking for Visual Studio 2019...
+cmake -G "Visual Studio 16 2019" -A x64 .. >nul 2>&1
+if %ERRORLEVEL% EQU 0 (
+    echo [OK] Visual Studio 2019 detected and configured!
+    set VS_USED=2019
+    goto :BUILD_STEP
 )
 
-REM --- COMPLETE FAILURE ---
+REM --- FAILURE ---
 echo.
-echo ========================================
-echo ERROR: No Visual Studio installation found!
-echo ========================================
+echo ================================
+echo ERROR: No Visual Studio found!
+echo ================================
 echo.
-echo We tried the following generators:
-for %%G in (%GENERATORS%) do echo   - %%G
-echo.
-echo Troubleshooting steps:
-echo 1. Install Visual Studio 2022 or 2019 with "Desktop development with C++"
-echo 2. Verify CMake can see VS by running: cmake --help
-echo 3. Check your CMake version:
-cmake --version
-echo.
-echo Available generators on your system:
-cmake --help | findstr /C:"Visual Studio"
-echo.
-echo [No need to panic Aamir and Fatima, you'll figure this out! :D]
+echo Install Visual Studio 2022/2026 with "Desktop development with C++"
 pause
 exit /b 1
 
 :BUILD_STEP
 echo.
 echo ================================
-echo Building project with: %VS_USED%
+echo Building with Visual Studio %VS_USED%
 echo ================================
+echo.
 cmake --build . --config Release
 if %ERRORLEVEL% NEQ 0 (
     echo.
-    echo ERROR: Build failed!
-    echo [No need to panic Aamir and Fatima I believe in you both....You'll figure this out :D].
+    echo ================================
+    echo BUILD FAILED - SEE ERRORS ABOVE
+    echo ================================
+	echo  WE ARE ON THIS JOURNEY TOGETHER I KNOW IT IS FRUSTRATING WHEN THINGS AREN'T WORKING 
+	echo  BUT I ALSO KNOW YOU HAVE WHAT IT TAKES TO GET THROUGH THIS.
+	echo YOU'LL FIGURE IT OUT AAMIR AND FATIMA I BELIEVE IN YOU.
+	echo <(• •<) ^ (•o•)^ (>• •)>  isn't this small ascii character cute :D it looks like it is warming up to go again.
+	echo also no pressure if you feel frustrated please take a break your health is more important than this project...
+	echo (\_/)    
+	echo ( •_•)   A cute bunny to cheer you up. it is giving you a heart <3;
+	echo /  ><3    
+	echo
+	echo                                                                   
+	echo                                                                   
+
+echo  ___    ___ ________  ___  ___          ________  ________  _________   
+echo |\  \  /  /|\   __  \|\  \|\  \        |\   ____\|\   __  \|\___   ___\ 
+echo \ \  \/  / | \  \|\  \ \  \\\  \       \ \  \___|\ \  \|\  \|___ \  \_| 
+echo  \ \    / / \ \  \\\  \ \  \\\  \       \ \  \  __\ \  \\\  \   \ \  \  
+echo   \/  /  /   \ \  \\\  \ \  \\\  \       \ \  \|\  \ \  \\\  \   \ \  \ 
+echo __/  / /      \ \_______\ \_______\       \ \_______\ \_______\   \ \__\
+echo|\___/ /        \|_______|\|_______|        \|_______|\|_______|    \|__|
+echo\|___|/                                                                  
+echo                                                                         
+echo                                                                         
+echo _________  ___  ___  ___  ________                                      
+echo|\___   ___\\  \|\  \|\  \|\   ____\                                     
+echo\|___ \  \_\ \  \\\  \ \  \ \  \___|_                                    
+echo     \ \  \ \ \   __  \ \  \ \_____  \                                   
+echo      \ \  \ \ \  \ \  \ \  \|____|\  \                                  
+echo       \ \__\ \ \__\ \__\ \__\____\_\  \                                 
+echo        \|__|  \|__|\|__|\|__|\_________\                                
+echo                             \|_________|                                
+echo
+echo
+
+
+
     pause
     exit /b 1
 )
-
-echo.
+if "%VS_USED%"=="2026" (
 echo ================================
 echo Build successful!
-echo Executable location: bin\spiral-flap.exe
 echo ================================
+echo Executable: bin\spiral-flap.exe
+echo 
+echo YOU DID IT KING I BELIEVED IN YOU  :)
 echo.
-echo Run with: bin\spiral-flap.exe
+) else if "%VS_USED%"=="2022" (
+echo ================================
+echo Build successful!
+echo ================================
+echo Executable: bin\spiral-flap.exe
+echo SLAYYYYYYY.
+)
+
+echo          _____                    _____            _____          
+echo         /\    \                  /\    \          /\    \         
+echo        /::\    \                /::\____\        /::\    \        
+echo       /::::\    \              /:::/    /       /::::\    \       
+echo      /::::::\    \            /:::/    /       /::::::\    \      
+echo     /:::/\:::\    \          /:::/    /       /:::/\:::\    \     
+echo    /:::/__\:::\    \        /:::/    /       /:::/__\:::\    \    
+echo    \:::\   \:::\    \      /:::/    /       /::::\   \:::\    \   
+echo  ___\:::\   \:::\    \    /:::/    /       /::::::\   \:::\    \  
+echo /\   \:::\   \:::\    \  /:::/    /       /:::/\:::\   \:::\    \ 
+echo/::\   \:::\   \:::\____\/:::/____/       /:::/  \:::\   \:::\____\
+echo\:::\   \:::\   \::/    /\:::\    \       \::/    \:::\  /:::/    /
+echo \:::\   \:::\   \/____/  \:::\    \       \/____/ \:::\/:::/    / 
+echo  \:::\   \:::\    \       \:::\    \               \::::::/    /  
+echo   \:::\   \:::\____\       \:::\    \               \::::/    /   
+echo    \:::\  /:::/    /        \:::\    \              /:::/    /    
+echo     \:::\/:::/    /          \:::\    \            /:::/    /     
+echo      \::::::/    /            \:::\    \          /:::/    /      
+echo       \::::/    /              \:::\____\        /:::/    /       
+echo        \::/    /                \::/    /        \::/    /        
+echo         \/____/                  \/____/          \/____/         
+                                                                   
+echo      _____                _____                _____              
+echo     |\    \              |\    \              |\    \             
+echo     |:\____\             |:\____\             |:\____\            
+echo     |::|   |             |::|   |             |::|   |            
+echo     |::|   |             |::|   |             |::|   |            
+echo     |::|   |             |::|   |             |::|   |            
+echo     |::|   |             |::|   |             |::|   |            
+echo     |::|   |             |::|   |             |::|   |            
+echo     |::|___|______       |::|___|______       |::|___|______      
+echo     /::::::::\    \      /::::::::\    \      /::::::::\    \     
+echo    /::::::::::\____\    /::::::::::\____\    /::::::::::\____\    
+echo   /:::/~~~~/~~         /:::/~~~~/~~         /:::/~~~~/~~          
+echo  /:::/    /           /:::/    /           /:::/    /             
+echo /:::/    /           /:::/    /           /:::/    /              
+echo/:::/    /           /:::/    /           /:::/    /               
+echo\::/    /            \::/    /            \::/    /                
+echo \/____/              \/____/              \/____/                 
+echo                                                                   
+                                                                   
 pause
